@@ -7,11 +7,7 @@ const listGuitars = [
     brend: 'Cort',
     cost: 6919,
   },
-  {
-    img: 'https://content1.rozetka.com.ua/goods/images/big_tile/316680030.jpg"',
-    brend: 'Cort',
-    cost: 7326,
-  },
+
   {
     img: 'https://content2.rozetka.com.ua/goods/images/big_tile/310337543.jpg',
     brend: 'Squier',
@@ -33,9 +29,19 @@ const listGuitars = [
     cost: 13593,
   },
   {
+    img: 'https://content1.rozetka.com.ua/goods/images/big_tile/316680030.jpg"',
+    brend: 'Cort',
+    cost: 7326,
+  },
+  {
     img: 'https://content.rozetka.com.ua/goods/images/big_tile/316279951.jpg',
     brend: 'Jackson',
     cost: 8170,
+  },
+  {
+    img: 'https://guitarhouse.com.ua/content/images/5/202x600l80mc0/epiphone-les-paul-standard-50s-vintage-sunburst-elektrogitara-74988354648726.webp',
+    brend: 'Gibson',
+    cost: 21100,
   },
 ];
 
