@@ -1,0 +1,87 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  font-family: "Nunito", sans-serif;
+  font-size: 26px;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.js-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+
+.js-item {
+  -ms-flex-preferred-size: calc((100% - 40px) / 5);
+      flex-basis: calc((100% - 40px) / 5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow 100ms linear, -webkit-transform 100ms linear;
+  transition: -webkit-box-shadow 100ms linear, -webkit-transform 100ms linear;
+  transition: box-shadow 100ms linear, transform 100ms linear;
+  transition: box-shadow 100ms linear, transform 100ms linear, -webkit-box-shadow 100ms linear, -webkit-transform 100ms linear;
+}
+
+.js-item:hover {
+  -webkit-box-shadow: 0px 2px 11px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px -4px rgba(0, 0, 0, 0.75);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.filter-input {
+  margin-bottom: 25px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  -webkit-transition: border 250ms linear;
+  transition: border 250ms linear;
+  font-size: 22px;
+  padding: 2px;
+}
+
+.filter-input:focus {
+  outline: none;
+  border: 1px solid rgb(125, 128, 119);
+}/*# sourceMappingURL=main.css.map */
