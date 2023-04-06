@@ -1,3 +1,5 @@
+// Variables
+
 const listGutarsEl = document.querySelector('.js-list');
 const itemGuitarEl = document.querySelector('.js-item');
 const filterInputEl = document.querySelector('.filter-input');
@@ -64,6 +66,8 @@ const listGuitars = [
   },
 ];
 
+// Basic Markup
+
 const createdAllItems = listGuitars
   .map(({ img, brend, cost }) => {
     return createItemsList(img, brend, cost);
@@ -72,6 +76,16 @@ const createdAllItems = listGuitars
 
 listGutarsEl.innerHTML = createdAllItems;
 
+// Listeners
+
+window.addEventListener('keydown', evt => {
+  if (evt.code === 'Escape' && backdropModalEl.classList.contains('active')) {
+    backdropModalEl.classList.remove('active');
+    listGutarsEl.addEventListener('click', onClickOpenModalBackdrop);
+    return;
+  }
+});
+
 filterInputEl.addEventListener(
   'input',
   _.debounce(onInputCheckFilteredItems, 300)
@@ -79,13 +93,9 @@ filterInputEl.addEventListener(
 
 listGutarsEl.addEventListener('click', onClickOpenModalBackdrop);
 
-sorterEl.addEventListener('change', evt => {
-  const valEvt = evt.target.value;
-  if (valEvt != 'brend') {
-    return onChangeSortedOfPriceItems(valEvt);
-  }
-  return onChangeSortedOfBrendItems();
-});
+sorterEl.addEventListener('change', onChangeSortedItems);
+
+// Functions
 
 function createItemsList(img, brend, cost) {
   return `<li class="js-item"><img src="${img}" alt="${brend}"
@@ -133,6 +143,14 @@ function onClickCloseModalBackdrop(evt) {
   }
 }
 
+function onChangeSortedItems(evt) {
+  const valEvt = evt.target.value;
+  if (valEvt != 'brend') {
+    return onChangeSortedOfPriceItems(valEvt);
+  }
+  return onChangeSortedOfBrendItems();
+}
+
 function onChangeSortedOfPriceItems(evt) {
   const sortedItems = listGuitars
     .sort((a, b) => {
@@ -161,3 +179,5 @@ function onChangeSortedOfBrendItems() {
 
   return (listGutarsEl.innerHTML = sortedItems);
 }
+
+function onKeydownCloseModalBackdrop() {}
