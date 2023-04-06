@@ -78,8 +78,6 @@ listGutarsEl.innerHTML = createdAllItems;
 
 // Listeners
 
-window.addEventListener('keydown', onKeydownCloseModalBackdrop);
-
 filterInputEl.addEventListener(
   'input',
   _.debounce(onInputCheckFilteredItems, 300)
@@ -127,12 +125,15 @@ function onClickOpenModalBackdrop(evt) {
       />`;
     listGutarsEl.removeEventListener('click', onClickOpenModalBackdrop);
     backdropModalEl.addEventListener('click', onClickCloseModalBackdrop);
+    window.addEventListener('keydown', onKeydownCloseModalBackdrop);
   }
 }
 
 function onClickCloseModalBackdrop(evt) {
   if (evt.currentTarget === evt.target) {
     backdropModalEl.classList.remove('active');
+    backdropModalEl.removeEventListener('click', onClickCloseModalBackdrop);
+    window.removeEventListener('keydown', onKeydownCloseModalBackdrop);
     listGutarsEl.addEventListener('click', onClickOpenModalBackdrop);
   }
 }
@@ -177,7 +178,8 @@ function onChangeSortedOfBrendItems() {
 function onKeydownCloseModalBackdrop(evt) {
   if (evt.code === 'Escape' && backdropModalEl.classList.contains('active')) {
     backdropModalEl.classList.remove('active');
+    backdropModalEl.removeEventListener('click', onClickCloseModalBackdrop);
+    window.removeEventListener('keydown', onKeydownCloseModalBackdrop);
     listGutarsEl.addEventListener('click', onClickOpenModalBackdrop);
-    return;
   }
 }
