@@ -78,13 +78,7 @@ listGutarsEl.innerHTML = createdAllItems;
 
 // Listeners
 
-window.addEventListener('keydown', evt => {
-  if (evt.code === 'Escape' && backdropModalEl.classList.contains('active')) {
-    backdropModalEl.classList.remove('active');
-    listGutarsEl.addEventListener('click', onClickOpenModalBackdrop);
-    return;
-  }
-});
+window.addEventListener('keydown', onKeydownCloseModalBackdrop);
 
 filterInputEl.addEventListener(
   'input',
@@ -180,4 +174,10 @@ function onChangeSortedOfBrendItems() {
   return (listGutarsEl.innerHTML = sortedItems);
 }
 
-function onKeydownCloseModalBackdrop() {}
+function onKeydownCloseModalBackdrop(evt) {
+  if (evt.code === 'Escape' && backdropModalEl.classList.contains('active')) {
+    backdropModalEl.classList.remove('active');
+    listGutarsEl.addEventListener('click', onClickOpenModalBackdrop);
+    return;
+  }
+}
