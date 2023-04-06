@@ -42,6 +42,8 @@ section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -65,6 +67,14 @@ section {
   transition: -webkit-box-shadow 100ms linear, -webkit-transform 100ms linear;
   transition: box-shadow 100ms linear, transform 100ms linear;
   transition: box-shadow 100ms linear, transform 100ms linear, -webkit-box-shadow 100ms linear, -webkit-transform 100ms linear;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 350ms;
+          animation-duration: 350ms;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 
 .js-item:hover {
@@ -104,6 +114,7 @@ section {
   height: 30px;
   font-size: 18px;
   border-radius: 6px;
+  outline: none;
 }
 
 /**
