@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap"
       rel="stylesheet"
     />
 
@@ -31,10 +31,20 @@
             class="filter-input"
             placeholder="Gibson"
           />
+          <select name="sorter" class="sorter">
+            <optgroup label="Price">
+              <option value="lowest">to lowest</option>
+              <option value="highest">to highest</option>
+            </optgroup>
+            <option value="brend">Brend</option>
+          </select>
         </label>
         <ul class="list-card js-list"></ul>
       </div>
     </section>
+    <div class="backdrop">
+      <div class="modal-img"></div>
+    </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
       integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
